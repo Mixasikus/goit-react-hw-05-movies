@@ -1,10 +1,13 @@
+// import MoviesTrend from 'components/Movies/MoviesTrend';
 import AppBar from './AppBar';
 
-export default function Layout() {
+import { Outlet } from 'react-router-dom';
+
+export default function Home() {
   return (
     <>
       <AppBar />
-      <div>Content</div>
+      <Outlet />
     </>
   );
 }
