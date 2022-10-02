@@ -1,0 +1,19 @@
+import { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
+import GetMovieDetails from 'components/Services/GetMovieDetails';
+
+export default function MovieDetails() {
+  const { moviesId } = useParams();
+  const [movies, setMovies] = useState(null);
+
+  useEffect(() => {
+    GetMovieDetails(moviesId).then(setMovies);
+  }, [moviesId]);
+
+  if (!movies) {
+    return null;
+  }
+  //   console.log(movies.data);
+
+  return <div>{movies.data.title}</div>;
+}
