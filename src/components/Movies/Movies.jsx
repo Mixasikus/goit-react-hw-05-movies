@@ -5,10 +5,11 @@ import fetchQueryMovies from 'components/Services/SearchMovies';
 
 export default function Movies() {
   const location = useLocation();
-  const [searchImage, setSearchImage] = useState('');
+
   const [movies, setMovies] = useState([]);
   const [searchParams, setSearchParams] = useSearchParams();
   const query = searchParams.get('query') ?? '';
+  const [searchImage, setSearchImage] = useState(query);
 
   useEffect(() => {
     if (!searchImage) {
@@ -23,7 +24,6 @@ export default function Movies() {
     setSearchImage(searchImage);
     setSearchParams(searchImage !== '' ? { query: searchImage } : query);
   };
-  // console.log(searchImage);
   return (
     <>
       <main>

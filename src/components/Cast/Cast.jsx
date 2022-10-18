@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
 import GetMovieCredits from 'components/Services/GetMovieCredits';
+import CastList from './CastList';
+import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 
 export default function Cast() {
-  //   const location = useLocation();
   const { moviesId } = useParams();
   const [movies, setMovies] = useState(null);
 
@@ -15,13 +15,18 @@ export default function Cast() {
     return null;
   }
   const cast = movies.data.cast;
-  console.log(cast);
 
   return (
-    <>
-      {cast.map(({ profile_path, original_name, name, character }) =>
-        console.log()
-      )}
-    </>
+    <div>
+      {cast.map(({ profile_path, original_name, id, character }) => (
+        <ul key={id}>
+          <CastList
+            image={profile_path}
+            name={original_name}
+            character={character}
+          />
+        </ul>
+      ))}
+    </div>
   );
 }

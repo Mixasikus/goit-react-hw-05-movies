@@ -2,10 +2,11 @@ import { Route, Routes } from 'react-router-dom';
 import Home from './Home/Home';
 import Movies from './Movies/Movies';
 import { ToastContainer } from 'react-toastify';
-import MovieDetailsSearch from './Movies/MovieDetailsSearch.jsx';
-import Cast from './Movies/Cast';
+import MovieDetailsSearch from './Movies/MovieDetails.jsx';
+import Cast from './Cast/Cast';
 import SharedLayout from './Home/SharedLayout';
-import NotFound from './Home/NotFound';
+import NotFound from './NotFound/NotFound';
+import Reviews from './Reviews/Reviews';
 
 export const App = () => {
   return (
@@ -16,6 +17,7 @@ export const App = () => {
           <Route path="movies" element={<Movies />} />
           <Route path="movies/:moviesId" element={<MovieDetailsSearch />}>
             <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
           </Route>
         </Route>
         <Route path="*" element={<NotFound />} />
