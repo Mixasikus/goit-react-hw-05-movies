@@ -26,7 +26,7 @@ export default function Reviews() {
           ))}
         </div>
       ) : (
-        'We don`t  have any reviews for this movie'
+        <p>We don`t have any reviews for this movie</p>
       )}
     </>
   );

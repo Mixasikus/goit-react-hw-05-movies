@@ -1,13 +1,13 @@
-import { Link } from 'react-router-dom';
+import { Link, Nav } from './AppBar.module';
 
 export default function AppBar() {
   return (
     <>
       <header>
-        <nav>
+        <Nav>
           <Link to="/">Home</Link>
-          <Link to="movies">Movies</Link>
-        </nav>
+          <Link to="/movies">Movies</Link>
+        </Nav>
       </header>
     </>
   );

@@ -7,7 +7,7 @@ export default function MovieDetailsCard({
   overview,
 }) {
   return (
-    <>
+    <div>
       <img src={httpsPoster} alt={title} />
       <h1>
         {title}
@@ -18,6 +18,6 @@ export default function MovieDetailsCard({
       <p>{overview}</p>
       <h3>Genres</h3>
       <p>{genresMovies}</p>
-    </>
+    </div>
   );
 }
