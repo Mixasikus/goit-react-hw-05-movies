@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
-import { Link, Outlet, useLocation, useParams } from 'react-router-dom';
+import { Outlet, useLocation, useParams } from 'react-router-dom';
 import GetMovieDetails from 'components/Services/GetMovieDetails';
 import MovieDetailsCard from './MovieDetailsCard';
+import { BackLink } from 'components/BackLink/BackLink.module';
+import { ContainerInfo, Link } from './MovieDetails.module';
 
 export default function MovieDetails() {
   const { moviesId } = useParams();
@@ -27,7 +29,7 @@ export default function MovieDetails() {
 
   return (
     <>
-      <Link to={backLinkHref}>Back</Link>
+      <BackLink to={backLinkHref}>Back</BackLink>
       <MovieDetailsCard
         httpsPoster={httpsPoster + poster_path}
         title={title}
@@ -36,13 +38,15 @@ export default function MovieDetails() {
         voteAverage={vote_average}
         overview={overview}
       />
-
-      <Link to="cast" state={location.state}>
-        Cast
-      </Link>
-      <Link to="reviews" state={location.state}>
-        Reviews
-      </Link>
+      <ContainerInfo>
+        <p>Additional information</p>
+        <Link to="cast" state={location.state}>
+          Cast
+        </Link>
+        <Link to="reviews" state={location.state}>
+          Reviews
+        </Link>
+      </ContainerInfo>
       <Outlet />
     </>
   );

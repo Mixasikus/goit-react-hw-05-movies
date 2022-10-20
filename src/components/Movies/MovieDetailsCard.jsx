@@ -1,3 +1,13 @@
+import {
+  ContainerDetails,
+  Img,
+  TitleName,
+  TitleOverview,
+  YearText,
+  PopularityText,
+  GenresList,
+} from './MovieDetails.module';
+
 export default function MovieDetailsCard({
   httpsPoster,
   title,
@@ -7,17 +17,21 @@ export default function MovieDetailsCard({
   overview,
 }) {
   return (
-    <div>
-      <img src={httpsPoster} alt={title} />
-      <h1>
-        {title}
-        <p>{year}</p>
-      </h1>
-      <p>Popularity {voteAverage} </p>
-      <h2>Overview</h2>
-      <p>{overview}</p>
-      <h3>Genres</h3>
-      <p>{genresMovies}</p>
-    </div>
+    <ContainerDetails>
+      <Img src={httpsPoster} alt={title} />
+      <div>
+        <TitleName>
+          {title}
+          <YearText>({year})</YearText>
+        </TitleName>
+        <PopularityText>Popularity {voteAverage} </PopularityText>
+        <TitleOverview>Overview</TitleOverview>
+        <p>{overview}</p>
+        <h3>
+          Genres
+          <GenresList>{genresMovies}</GenresList>
+        </h3>
+      </div>
+    </ContainerDetails>
   );
 }

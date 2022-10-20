@@ -18,6 +18,7 @@ export default function Home() {
 
   return (
     <main>
+      <h1>Trending Today</h1>
       <ul>
         {movies.map(({ id, title }) => (
           <li key={id}>
