@@ -5,7 +5,9 @@ export default function AppBar() {
     <>
       <header>
         <Nav>
-          <Link to="/">Home</Link>
+          <Link to="/" end>
+            Home
+          </Link>
           <Link to="/movies">Movies</Link>
         </Nav>
       </header>
