@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import GetTrending from 'components/Services/GetTrending';
+import GetTrending from 'Services/GetTrending';
 
 export default function Home() {
   const location = useLocation();

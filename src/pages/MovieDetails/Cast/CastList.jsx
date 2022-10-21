@@ -1,4 +1,4 @@
-import defaultImg from '../DefaultImage/default.jpg';
+import defaultImg from 'DefaultImage/default.jpg';
 
 export default function CastList({ image, name, character }) {
   const imgURL = image ? `https://image.tmdb.org/t/p/w300${image}` : defaultImg;

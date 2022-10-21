@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
-import GetMovieDetails from 'components/Services/GetMovieDetails';
+import GetMovieDetails from 'Services/GetMovieDetails';
 import MovieDetailsCard from './MovieDetailsCard';
 import { BackLink } from 'components/BackLink/BackLink.module';
 import { ContainerInfo, Link } from './MovieDetails.module';

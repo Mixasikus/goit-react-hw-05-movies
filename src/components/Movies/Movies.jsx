@@ -1,7 +1,7 @@
-import SearchBar from '../SearchBar/SearchBar';
 import { Link, Outlet, useLocation, useSearchParams } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import fetchQueryMovies from 'components/Services/SearchMovies';
+import SearchBar from 'components/SearchBar/SearchBar';
+import fetchQueryMovies from 'Services/SearchMovies';
 
 export default function Movies() {
   const location = useLocation();
@@ -28,15 +28,17 @@ export default function Movies() {
     <>
       <main>
         <SearchBar onChange={handleFormSubmit} />
-        <ul>
-          {movies.map(({ id, title }) => (
-            <li key={id}>
-              <Link to={`${id}`} state={{ from: location }}>
-                {title}
-              </Link>
-            </li>
-          ))}
-        </ul>
+        {movies.length > 0 && (
+          <ul>
+            {movies.map(({ id, title }) => (
+              <li key={id}>
+                <Link to={`${id}`} state={{ from: location }}>
+                  {title}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
         <Outlet />
       </main>
     </>

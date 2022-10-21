@@ -1,4 +1,4 @@
-import GetMovieReviews from 'components/Services/GetMovieReviews';
+import GetMovieReviews from 'Services/GetMovieReviews';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
