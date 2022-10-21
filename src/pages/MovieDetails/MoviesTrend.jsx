@@ -15,7 +15,6 @@ export default function Home() {
   if (!movies) {
     return null;
   }
-
   return (
     <main>
       <h1>Trending Today</h1>
